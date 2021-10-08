@@ -1,3 +1,8 @@
+<%@page import="java.util.List"%>
+<%@page import="DTO.Cliente;"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%List<Cliente> clientes = (List<Cliente>) request.getAttribute("clientes");%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +14,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- FUENTE DE GOOGLE FONT -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
-	<title>Tienda Genérica Grupo 1</title>
+	<title>Tienda GenÃ©rica Grupo 1</title>
 </head>
 <body> 
 	<!--BarraNavegador -->
@@ -61,6 +66,17 @@
 							<label for="floatingInput">E-mail</label>
 						</div>
 					</div>
+					<%
+					for (Cliente cliente : clientes) {
+					%>
+	                <tr>
+	                    <td><%=cliente.getIdcli()%></td>
+	                    <td><%=cliente.getDircli()%></td>
+	                    <td><%=cliente.getMailcli()%></td>
+	                    <td><%=cliente.getNomcli()%></td>
+	                    <td><%=cliente.getTelcli()%></td>
+	                </tr>
+	                <% } %>
 					<!--Botoneria CRUD -->
 					<div class="row">
 						<button type="button" class="btn btn-outline-primary col text-center m-2">Consultar</button>

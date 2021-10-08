@@ -17,7 +17,7 @@
 		<div class="col-md-4 mb-3">
 			<div class="container align-content-center">
 				<div class="shadow p-4 mb-5 bg-light rounded">
-					<form>
+					<form class="form-sign" method="get" action="/loging">
 						<div class="mb-3">
 							<label for="exampleInputEmail1" class="form-label">Usuario</label>
 							<input type="text" name="Usuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

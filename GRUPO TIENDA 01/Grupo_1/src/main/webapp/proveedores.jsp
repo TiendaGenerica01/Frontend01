@@ -1,3 +1,8 @@
+<%@page import="java.util.List"%>
+<%@page import="DTO.Proveedor;"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%List<Proveedor> proveedores = (List<Proveedor>) request.getAttribute("proveedores");%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,6 +66,17 @@
 							<label for="floatingInput">Ciudad</label>
 						</div>
 					</div>
+					<%
+					for (Proveedor proveedor : Proveedores) {
+					%>
+	                <tr>
+	                    <td><%=proveedor.getIdpro()%></td>
+	                    <td><%=proveedor.getCiupro()%></td>
+	                    <td><%=proveedor.getDirpro()%></td>
+	                    <td><%=proveedor.getNompro()%></td>
+	                    <td><%=proveedor.getTelpro()%></td>
+	                </tr>
+	                <% } %>
 					<!--Botoneria CRUD -->
 					<div class="row">
 						<button type="button" class="btn btn-outline-primary col text-center m-2">Consultar</button>

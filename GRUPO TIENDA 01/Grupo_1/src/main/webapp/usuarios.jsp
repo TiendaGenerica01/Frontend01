@@ -1,3 +1,11 @@
+
+<%@page import="java.util.List"%>
+<%@page import="DTO.Usuario;"%>
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="DAO.Conexion"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios");%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,10 +65,20 @@
 							<label for="floatingInput">Usuario</label>
 						</div>
 						<div class="form-floating">
-							<input type="password" name="Contraseña"class="form-control" id="floatingPassword" placeholder="Password">
-							<label for="floatingPassword">Contraseña</label>
+							<input type="password" name="ContraseÃ±a"class="form-control" id="floatingPassword" placeholder="Password">
+							<label for="floatingPassword">ContraseÃ±a</label>
 						</div>
 					</div>
+					<%
+					for (Usuario usuario : usuarios) {
+					%>
+	                <tr>
+	                    <td><%=usuario.getIdusu()%></td>
+	                    <td><%=usuario.getNomusu()%></td>
+	                    <td><%=usuario.getMailusu()%></td>
+	                    <td><%=usuario.getArio()%></td>
+	                </tr>
+	                <% } %>
 					<!--Botoneria CRUD -->
 					<div class="row">
 						<button type="button" class="btn btn-outline-primary col text-center m-2">Consultar</button>
